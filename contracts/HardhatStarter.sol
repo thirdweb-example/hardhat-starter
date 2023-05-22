@@ -19,4 +19,9 @@ contract HardhatStarter is ERC721Drop {
             _primarySaleRecipient
         )
     {}
+
+    function mint(address _to, uint256 _amount) external {
+        require(_amount > 0, 'You must mint at least one token!');
+        _safeMint(_to, _amount);
+    }
 }
